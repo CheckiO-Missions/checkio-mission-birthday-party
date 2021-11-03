@@ -7,30 +7,42 @@ Each test is a dict with
     "explanation" -- not necessarily a key, it's used for an additional info in animation.
 """
 
+from datetime import date
+
 
 TESTS = {
     "Basics": [
         {
-            "input": [3, 2],
-            "answer": 5,
-            "explanation": "3+2=?"
+            "input": [date(2022, 1, 5)],
+            "answer": date(2022, 1, 8),
+            "explanation": "Wed => Sat"
         },
         {
-            "input": [5, 7],
-            "answer": 12,
-            "explanation": "5+7=?"
-        }
+            "input": [date(2022, 2, 21)],
+            "answer": date(2022, 2, 26),
+            "explanation": "Mon => Sat"
+        },
+        {
+            "input": [date(2022, 3, 26)],
+            "answer": date(2022, 3, 26),
+            "explanation": "Sat => Sat"
+        },
+        {
+            "input": [date(2022, 4, 17)],
+            "answer": date(2022, 4, 17),
+            "explanation": "Sun => Sun"
+        },
+        {
+            "input": [date(2022, 3, 30)],
+            "answer": date(2022, 4, 2),
+            "explanation": "Sat => Sat"
+        },
     ],
     "Extra": [
         {
-            "input": [6, 3],
-            "answer": 9,
-            "explanation": "6+3=?"
+            "input": [date(2021, 2, 19)],
+            "answer": date(2021, 2, 20),
+            "explanation": "Fri => Sat"
         },
-        {
-            "input": [6, 7],
-            "answer": 13,
-            "explanation": "6+7=?"
-        }
     ]
 }
