@@ -33,6 +33,7 @@ from checkio.referees import cover_codes
 
 from tests import TESTS
 
+
 api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
@@ -42,7 +43,10 @@ api.add_listener(
             "js": "birthdayParty"
         },
         cover_code={
-            'python-3': cover_codes.unwrap_args,
-            'js-node': cover_codes.js_unwrap_args
+            'python-3': {},
+            #'python-3': cover_codes.unwrap_args,
+            'js-node': {
+                "dateForZeros": True
+            }
         }
     ).on_ready)
